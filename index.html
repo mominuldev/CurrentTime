@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Current Time</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+        
+        <style>
+            body {
+                font-family: 'Oswald', sans-serif;
+            }
+            .current-time {
+                background: #0f0088;
+                margin: 0 auto;
+                max-width: 450px;
+                padding: 40px;
+                margin-top: 50px;
+                position: relative;
+                border-radius: 2px;
+                overflow: hidden;
+            }
+
+            .time-inner {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .time-inner > div {
+                color: #fff;
+                font-size: 50px;
+                position: relative;
+                background: #00d0ff;
+                width: 80px;
+                height: 80px;
+                text-align: center;
+                font-weight: 700;
+                padding: 10px;
+                border-radius: 5px;
+                line-height: 80px;
+                text-transform: uppercase;
+
+            }
+
+            .time-inner > div:not(:last-child) {
+                margin-right: 10px;
+            }
+
+            .time-inner > div:not(:last-child):after {
+                content: ':';
+                position: absolute;
+                right: -40px;
+                top: 40%;
+                transform: translateY(-50%);
+
+            }
+
+            #progress {
+                display: block;
+                height: 5px;
+                background-color: #01ff27;
+                width: 0;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="current-time">
+            <div class="time-inner">
+                <div class="hour" id="hour"></div>
+                <div class="minit" id="minit"></div>
+                <div class="sec" id="sec"></div>
+                <div class="am" id="ampm"></div>
+            </div>
+            <span id="progress"></span>
+        </div>
+
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>
